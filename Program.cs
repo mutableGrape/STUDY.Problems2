@@ -17,6 +17,12 @@ namespace Problems2
             Console.WriteLine(max1020(11, 19));
             Console.ReadLine();
 
+            Console.WriteLine("Warmup2: array667");
+            Console.WriteLine(array667(new int[] { 6, 6, 2}));
+            Console.WriteLine(array667(new int[] { 6, 6, 2, 6 }));
+            Console.WriteLine(array667(new int[] { 6, 7, 2, 6 }));
+            Console.ReadLine();
+
 
         }
 
@@ -31,6 +37,23 @@ namespace Problems2
             else if ((10 <= d) && (d <= 30)) { return d; }
             else { return 0; }
 
+        }
+
+        static int array667(int[] a)
+        {
+            int count = 0;
+            for (int i = 0; i < a.Length - 2; i++)
+            {
+                if ((a[i] == 6) && (a[i+1] == 6))
+                {
+                    count++;
+                }
+                else if ((a[i] == 6) && (a[i+1] == 7))
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }
