@@ -23,7 +23,11 @@ namespace Problems2
             Console.WriteLine(array667(new int[] { 6, 7, 2, 6 }));
             Console.ReadLine();
 
-
+            Console.WriteLine("String-1: withoutX2");
+            Console.WriteLine(withoutX2("xHi"));
+            Console.WriteLine(withoutX2("Hxi"));
+            Console.WriteLine(withoutX2("Hi"));
+            Console.ReadLine();
         }
 
         static int max1020(int a, int b)
@@ -54,6 +58,21 @@ namespace Problems2
                 }
             }
             return count;
+        }
+
+        static String withoutX2(String s)
+        {
+            StringBuilder sb = new StringBuilder(s, s.Length);
+
+            if (s[1] == 'x')
+            {
+                sb.Remove(1, 1);
+            }
+            if (s[0] == 'x')
+            {
+                sb.Remove(0, 1);
+            }
+            return sb.ToString();
         }
     }
 }
