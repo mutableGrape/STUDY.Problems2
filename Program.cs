@@ -28,6 +28,18 @@ namespace Problems2
             Console.WriteLine(withoutX2("Hxi"));
             Console.WriteLine(withoutX2("Hi"));
             Console.ReadLine();
+
+            Console.WriteLine("Array-1: frontPieceX2");
+            foreach (int[] a in new int[][] { new int[] { 1, 2, 3 }, new int[] { 1, 2 }, new int[] { 1 } })
+            {
+                foreach (int i in frontPiece(a))
+                {
+                    Console.Write(i);
+                    Console.Write(", ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
         }
 
         static int max1020(int a, int b)
@@ -73,6 +85,21 @@ namespace Problems2
                 sb.Remove(0, 1);
             }
             return sb.ToString();
+        }
+
+        static int[] frontPiece(int[] a)
+        {
+            if (a.Length < 3)
+            {
+                return a;
+            } 
+            else
+            {
+                int[] tmp = new int[2];
+                tmp[0] = a[0];
+                tmp[1] = a[1];
+                return tmp;
+            }
         }
     }
 }
